@@ -14,6 +14,9 @@ public class Game {
         System.out.println("Enter a hidden word");
         hidden = kb.next();
         hidden=hidden.toLowerCase();
+        System.out.println("loading");
+        for (int i = 0; i<9; i++)
+        System.out.println("...");
 
         char [] hint = new char[hidden.length()];
         boolean runGame = true;
@@ -32,9 +35,7 @@ public class Game {
             else{
                 for (int r = 0; r <hidden.length(); r++){
                     char ch = guess.charAt(r);
-                    if (guess.substring(r).equals(hidden.substring(r))){
-                        hint[r]= guess.charAt(r);
-                    }
+
                     if (hidden.indexOf(ch)==-1) {
                         hint[r]='*';
                     }
